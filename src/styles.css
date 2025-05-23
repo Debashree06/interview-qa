@@ -1,0 +1,192 @@
+.folder {
+  margin-top: 6px;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  width: 300px;
+  cursor: pointer;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.inputContainer > span {
+  margin-top: 5px;
+}
+
+.inputContainer__input {
+  margin: 6px 0 0px 0;
+  padding: 5px;
+  display: flex;
+  border: 1px solid lightgray;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.folder > span {
+  margin: 0 5px;
+}
+
+.folder > div > button {
+  font-size: 15px;
+  background-color: white;
+}
+
+.file {
+  margin-top: 5px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* General Accordion Styles */
+.accordion {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Accordion Item Styles */
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Accordion Title Button */
+.accordion-title {
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-title:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-title[aria-expanded="true"] {
+  background-color: #d0d0d0;
+}
+
+.accordion-content {
+  padding: 15px;
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.accordion p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+/* Container for sidebar */
+.sidebar {
+  position: fixed;
+  right: 0;
+  /* changed from left: 0 */
+  height: 100vh;
+  width: 280px;
+  background: linear-gradient(135deg, #8d9fc9, #182848);
+  color: #f0f0f5;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.3);
+  padding-top: 60px;
+  transform: translateX(100%);
+  transition: transform 0.35s ease, box-shadow 0.3s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+}
+
+/* Sidebar visible */
+.sidebar.open {
+  transform: translateX(0);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Toggle button */
+.toggle-btn {
+  position: absolute;
+  top: 15px;
+  left: -60px;
+  background-color: #4b6cb7;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  color: #f0f0f5;
+  box-shadow: 0 4px 8px rgba(75, 108, 183, 0.6);
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn:hover {
+  background-color: #182848;
+  transform: scale(1.1);
+}
+
+/* Navigation menu */
+.nav-menu {
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 15px 20px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #f0f0f5;
+  transition: all 0.3s ease;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  height: 2px;
+  width: 0%;
+  background: #a8c0ff;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-item:hover::after {
+  width: 60%;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #a8c0ff;
+}
